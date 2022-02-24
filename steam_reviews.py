@@ -14,7 +14,7 @@ is an error, just run it again, that should work ig """
 game_name = "Witcher 3"
 
 """This is the number of reviews you want to get"""
-n = 200000
+number = 200000
 
 """This can either be "positive" or "negative", i kept them seperate so that 
 we can get a proper amount of both """
@@ -74,7 +74,7 @@ old = 0
 check = 1
 print(app_id)
 while (True):
-    reviews = get_n_reviews(app_id, n, sentiment)
+    reviews = get_n_reviews(app_id, number, sentiment)
     print(len(reviews))
     new = len(reviews)
     if (new==old) and (check==0):
