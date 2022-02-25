@@ -6,7 +6,8 @@ import pandas as pd
 all the reviews present on steam, but maybe 60-75% of them. Also, if there 
 is an error, just run it again, that should work ig """
 
-
+"""You only need to set the 4 parameters, game_name, number, sentiment, file_name 
+and run the program. Also put both the preprocessing and this program in the same folder"""
 
 
 """This is just the name of the game"""
