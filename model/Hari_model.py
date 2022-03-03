@@ -10,7 +10,7 @@ split = 0.05
 epoch = 6
 batch = 32
 pad_length = 800
-lstm_units = 100
+lstm_units = 50
 embedding_vector_length = 50
 
 def predict_sentiment(text):
@@ -21,50 +21,6 @@ def predict_sentiment(text):
 
 
 
-
-#train_1= pd.read_csv(r"C:\Users\harik\Documents\CHETAN\NITK\ACM\Projects\Sentiment analysis\Data files\train_clean.csv")
-
-#test = pd.read_csv(r"C:\Users\harik\Documents\CHETAN\NITK\ACM\Projects\Sentiment analysis\Data files\test_clean.csv")
-'''
-
-train = pd.concat([train_1, test], axis = 0, join ="outer", ignore_index = True)
-train = train.sample(frac = 1).reset_index(drop=True)
-print(train['Text'][0])
-print(train['Sentiment'][0])
-
-
-tar = []
-
-for s in train.Sentiment:
-    if s=='neg':
-        tar.append(0)
-    elif s=='pos':
-        tar.append(1)
-
-train["target"] = tar
-
-for col in train.columns:
-    print(col)
-    
-print(len(train.index))
-'''
-
-'''
-tar = []
-
-for s in sim.Sentiment:
-    if s=='neg':
-        tar.append(0)
-    elif s=='pos':
-        tar.append(1)
-
-sim["Target"] = tar
-#'''
-
-
-#sentiment_label_train = train["Sentiment"].factorize()
-#sentiment_label_test = test.Sentiment.factorize()
-#train = pd.DataFrame(columns = ['Text', 'target'])
 data_types = {"recommendationid":"string","author":"string", 
              "language" : "string", 
              "timestamp_created":"string", "timestamp_updated":"string", 
@@ -128,44 +84,3 @@ plt.plot(history.history['val_loss'], label='val_loss')
 plt.legend()
 plt.show()
 
-'''
-test_sentence1 = "I loved this movie very much"
-predict_sentiment(test_sentence1)
-
-test_sentence2 = "This is the worst movie i have ever watched"
-predict_sentiment(test_sentence2)
-'''
-'''
-x=0
-n =len(train.index)
-for i in range(0,n):
-    t = train.Text[i]
-    if train.Sentiment[i]=="neg":
-        x = x+1
-        text = " ".join(t.split())
-print(x)
-word_cloud = WordCloud(max_words = 1000 , width = 1600 , height = 800,
-              collocations=False,background_color = 'white').generate(text)
-
-plt.imshow(word_cloud, interpolation='bilinear')
-plt.axis("off")
-#plt.savefig("myimage.png", dpi=2400)
-plt.show()
-
-
-x=0
-n =len(train.index)
-for i in range(0,n):
-    t = train.Text[i]
-    if train.Sentiment[i]=="pos":
-        x = x+1
-        text = " ".join(t.split())
-print(x)
-word_cloud = WordCloud(max_words = 1000 , width = 1600 , height = 800,
-              collocations=False,background_color = 'white').generate(text)
-
-plt.imshow(word_cloud, interpolation='bilinear')
-plt.axis("off")
-#plt.savefig("myimage.png", dpi=2400)
-plt.show()
-'''
