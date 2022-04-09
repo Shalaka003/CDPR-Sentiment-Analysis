@@ -107,4 +107,3 @@ for i in range(true_k):
     print('')
 
 print("\n")
-print("Prediction")
